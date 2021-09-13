@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <string>
+#include "serializable.h"
 
 class JsonResponse
 {
@@ -11,6 +12,10 @@ class JsonResponse
 
 public:
     JsonResponse(std::string content) : out(content)
+    {
+    }
+
+    JsonResponse(Serializable &content) : out(content.serialize())
     {
     }
 

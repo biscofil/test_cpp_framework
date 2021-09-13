@@ -3,7 +3,8 @@
 
 #include <stdio.h>
 #include <iostream>
-#include "response.h"
+#include "../system/response.h"
+#include "../models/post.h"
 
 class PostController
 {
@@ -16,7 +17,13 @@ public:
 
     static JsonResponse insert()
     {
-        return {"{'new_post' : {}}"};
+        Post post;
+        return {"{'new_post' : " + post.serialize() + "}"};
+    }
+
+    static JsonResponse update(Post post)
+    {
+        return {"{'post' : " + post.serialize() + "}"};
     }
 };
 

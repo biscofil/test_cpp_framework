@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include <iostream>
-#include "posts_controller.h"
-#include "router.h"
+#include "controllers/posts_controller.h"
+#include "system/router.h"
 
 int main(int argc, char *argv[])
 {
 
-    Router::add(Router::GET, "posts", PostController::list);
-    Router::add(Router::POST, "posts", PostController::insert);
+    Router::get("posts", PostController::list);
+    Router::post("posts", PostController::insert);
 
     if (argc < 3)
     {
