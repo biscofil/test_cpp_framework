@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
     std::string method = argv[1];
     std::string path = argv[2];
 
-    Router::run(method, path).serialize();
+    std::cout << Router::run(method, path).serialize() << std::endl;
 
     return 0;
 }

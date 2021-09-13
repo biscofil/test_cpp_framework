@@ -6,6 +6,11 @@
 class Model : public Serializable
 {
 
+public:
+    bool update()
+    {
+        return false;
+    }
 };
 
 #endif MODEL

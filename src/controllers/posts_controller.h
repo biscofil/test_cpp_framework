@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 #include <iostream>
-#include "../system/response.h"
+#include "../system/response/json_response.h"
 #include "../models/post.h"
 
 class PostController

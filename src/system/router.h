@@ -6,12 +6,12 @@
 #include <map>
 #include <functional>
 #include <string>
-#include "response.h"
+#include "response/http_response.h"
 
 class Router
 {
 
-    static std::map<std::string, std::function<JsonResponse()>> routes; // METHOD_path, action
+    static std::map<std::string, std::function<HttpResponse()>> routes; // METHOD_path, action
 
 public:
 
@@ -34,7 +34,7 @@ public:
         add("POST", path, action);
     }
 
-    static JsonResponse run(std::string method, std::string path)
+    static HttpResponse run(std::string method, std::string path)
     {
         //std::cout << method << " @ " << path << std::endl;
         auto c = method + "_" + path;
@@ -46,6 +46,6 @@ public:
     }
 };
 
-std::map<std::string, std::function<JsonResponse()>> Router::routes = {};
+std::map<std::string, std::function<HttpResponse()>> Router::routes = {};
 
 #endif
