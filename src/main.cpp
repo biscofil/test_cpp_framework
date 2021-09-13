@@ -6,8 +6,9 @@
 int main(int argc, char *argv[])
 {
 
-    Router::get("posts", PostController::list);
-    Router::post("posts", PostController::insert);
+    Router::get("posts", PostController::index);
+    Router::get("api/posts", PostController::list);
+    Router::post("api/posts", PostController::insert);
 
     if (argc < 3)
     {

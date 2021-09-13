@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <iostream>
+#include "../system/view.h"
 #include "../system/response/json_response.h"
 #include "../models/post.h"
 
@@ -10,6 +11,11 @@ class PostController
 {
 
 public:
+    static HttpResponse index()
+    {
+        return HttpResponse(View("index.html").serialize());
+    }
+
     static JsonResponse list()
     {
         return {"{'posts' : [] }"};

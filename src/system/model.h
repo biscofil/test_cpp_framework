@@ -7,8 +7,16 @@ class Model : public Serializable
 {
 
 public:
+
     bool update()
     {
+        // TODO
+        return false;
+    }
+
+    bool save()
+    {
+        // TODO
         return false;
     }
 };

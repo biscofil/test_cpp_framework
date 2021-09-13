@@ -40,7 +40,7 @@ public:
         auto c = method + "_" + path;
         if (!routes.count(c))
         {
-            return {"NOT FOUND"};
+            return {"NOT FOUND", 404};
         }
         return (routes.find(c)->second)();
     }
