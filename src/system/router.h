@@ -34,6 +34,18 @@ public:
         add("POST", path, action);
     }
 
+    template <typename Function>
+    static void put(std::string path, Function &&action)
+    {
+        add("PUT", path, action);
+    }
+
+    template <typename Function>
+    static void delete_(std::string path, Function &&action)
+    {
+        add("DELETE", path, action);
+    }
+
     static HttpResponse run(std::string method, std::string path)
     {
         //std::cout << method << " @ " << path << std::endl;

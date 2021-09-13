@@ -18,7 +18,8 @@ public:
 
     static JsonResponse list()
     {
-        return {"{'posts' : [] }"};
+        auto posts = Post::all();
+        return {"{'posts' : "  + posts.serialize() +" }"};
     }
 
     static JsonResponse insert()

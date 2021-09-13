@@ -1,16 +1,20 @@
 #ifndef POST
 #define POST
 
-#include "../system/model.h"
+#include "../system/models/model.h"
+#include "../system/models/int_attribute.h"
+#include "../system/models/bool_attribute.h"
 
-class Post : public Model
+class Post : public Model<Post>
 {
-    int id = 1;
 
 public:
+
+    BoolAttribute approved;
+
     std::string serialize() override
     {
-        return "{'id' : " + std::to_string(id) + "}";
+        return "{'id' : " + id.serialize() + ", 'approved' : " + approved .serialize() + "}";
     }
 };
 
