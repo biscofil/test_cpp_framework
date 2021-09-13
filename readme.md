@@ -3,8 +3,8 @@
 ## Define routes
 
 ```c++
-Router::add(Router::GET, "posts", PostController::list);
-Router::add(Router::POST, "posts", PostController::insert);
+Router::get("posts", PostController::list);
+Router::post("posts", PostController::insert);
 ```
 
 ## Compile
