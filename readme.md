@@ -10,6 +10,7 @@ Router::add(Router::POST, "posts", PostController::insert);
 ## Compile
 
 ```sh
+cd src
 make
 ```
 
